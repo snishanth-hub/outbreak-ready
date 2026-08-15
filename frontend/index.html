@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outbreak Ready - Population Heatmap</title>
+  </head>
+  <body>
+    <div id="app">
+      <nav id="navbar">
+        <div class="nav-inner">
+          <div class="brand">
+            <div class="brand-icon">&#9881;</div>
+            <div>
+              <h1>Outbreak Ready</h1>
+              <p>Global population heatmap</p>
+            </div>
+          </div>
+
+          <ul class="nav-links">
+            <li><a href="#" class="active">Heatmap</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#data">Data</a></li>
+          </ul>
+
+          <div id="status" class="status">
+            <span class="status-dot"></span>
+            <span id="status-text">Initializing...</span>
+          </div>
+        </div>
+      </nav>
+
+      <div id="map"></div>
+
+      <div id="controls">
+        <button id="btn-locate" class="control-btn" title="Center on your location">
+          <span class="btn-icon">&#9673;</span>
+          <span>My location</span>
+        </button>
+        <button id="btn-refresh" class="control-btn" title="Reload heatmap data">
+          <span class="btn-icon refresh">&#10227;</span>
+          <span>Refresh</span>
+        </button>
+
+        <div class="divider"></div>
+
+        <label class="slider-row" for="radius">
+          <span>Heat radius</span>
+          <span id="radius-value">25</span>
+        </label>
+        <input id="radius" type="range" min="5" max="60" value="25" />
+        <label class="slider-row" for="blur">
+          <span>Blur</span>
+          <span id="blur-value">20</span>
+        </label>
+        <input id="blur" type="range" min="5" max="40" value="20" />
+
+        <div class="divider"></div>
+
+        <div class="legend">
+          <div class="legend-title">Population intensity</div>
+          <div class="legend-bar"></div>
+          <div class="legend-labels">
+            <span>Low</span>
+            <span>High</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer">
+        Data &copy; GeoNames (CC-BY 4.0) &middot; Map &copy; OpenStreetMap contributors
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
